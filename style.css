@@ -30,12 +30,78 @@ h1, h2, h3 {
 }
 
 /* Header & Navegación */
+/* --- AJUSTES DEL HEADER PARA LOGO Y PARTÍCULAS --- */
 header {
-  padding: 40px 20px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.8);
-  border-bottom: 2px solid var(--accent-purple);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    position: relative; /* Necesario para las partículas absolutas */
+    padding: 60px 20px; /* Más espacio para el logo */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9); /* Un poco más oscuro */
+    border-bottom: 2px solid var(--accent-purple);
+    box-shadow: 0 5px 30px rgba(139, 92, 246, 0.2);
+    overflow: hidden; /* Importante: las partículas no salen del header */
+}
+
+/* Contenedor de contenido para asegurar que el texto esté sobre las partículas */
+.header-content {
+    position: relative;
+    z-index: 2; /* Sobre las partículas */
+}
+
+/* ESTILO DEL LOGO */
+.header-logo {
+    max-width: 150px; /* Ajusta el tamaño según tu logo */
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px var(--accent-purple)); /* Brillo morado al logo */
+    position: relative;
+    z-index: 2;
+}
+
+/* Reducimos el tamaño del H1 si hay logo */
+header h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- ESTILOS DE PARTÍCULAS (SOLO EN HEADER) --- */
+#header-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Detrás del texto y logo */
+    pointer-events: none; /* No interfieren con clics */
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(139, 92, 246, 0.4); /* Morado oscuro transparente */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.6); /* Brillo sutil */
+    animation: floatParticle linear infinite;
+    opacity: 0; /* Empiezan invisibles */
+}
+
+/* Animación de flotación mística */
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* Aparecen suavemente */
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) scale(0.5); /* Suben y se achican */
+        opacity: 0;
+    }
 }
 
 nav {
