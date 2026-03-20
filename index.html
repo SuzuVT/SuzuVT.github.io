@@ -90,7 +90,11 @@
 <footer>
   <p>© 2026 SUZU VTUBER — TODOS LOS PACTOS RESERVADOS</p>
 </footer>
-
+<button id="btn-back-to-top" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" width="24" height="24">
+    <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+  </svg>
+</button>
 </body>
 </html>
 <script src="https://player.twitch.tv/js/embed/v1.js"></script>
@@ -103,26 +107,46 @@ var options = {
     parent: ["suzuvt.github.io", "localhost", "127.0.0.1"] 
   };
 
-  var player = new Twitch.Player("twitch-embed-container", options);
+var player = new Twitch.Player("twitch-embed-container", options);
 
-  // EVENTO: Cuando el directo empieza
-  player.addEventListener(Twitch.Player.ONLINE, () => {
-    const indicator = document.getElementById('live-status');
-    const statusText = document.getElementById('status-text');
+// EVENTO: Cuando el directo empieza
+player.addEventListener(Twitch.Player.ONLINE, () => {
+  const indicator = document.getElementById('live-status');
+  const statusText = document.getElementById('status-text');
     
-    indicator.classList.remove('offline');
-    indicator.classList.add('online');
-    statusText.innerText = '¡EN VIVO AHORA!';
-    console.log("Suzu está en directo. El hechizo ha comenzado.");
-  });
+  indicator.classList.remove('offline');
+  indicator.classList.add('online');
+  statusText.innerText = '¡EN VIVO AHORA!';
+  console.log("Suzu está en directo. El hechizo ha comenzado.");
+});
 
-  // EVENTO: Cuando el directo termina
-  player.addEventListener(Twitch.Player.OFFLINE, () => {
-    const indicator = document.getElementById('live-status');
-    const statusText = document.getElementById('status-text');
-    
-    indicator.classList.remove('online');
-    indicator.classList.add('offline');
-    statusText.innerText = 'MODO CREPUSCULAR (OFFLINE)';
+// EVENTO: Cuando el directo termina
+player.addEventListener(Twitch.Player.OFFLINE, () => {
+  const indicator = document.getElementById('live-status');
+  const statusText = document.getElementById('status-text');
+  
+  indicator.classList.remove('online');
+  indicator.classList.add('offline');
+  statusText.innerText = 'MODO CREPUSCULAR (OFFLINE)';
+});
+
+const backToTopBtn = document.getElementById("btn-back-to-top");
+
+// Detectar cuando el usuario baja 400px desde el inicio
+window.onscroll = function() {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    backToTopBtn.style.display = "flex";
+    backToTopBtn.style.animation = "fadeIn 0.3s ease forwards";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+
+// Acción al hacer clic: subir suavemente
+backToTopBtn.onclick = function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
+};
 </script>

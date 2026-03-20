@@ -222,3 +222,39 @@ summary { font-weight: bold; cursor: pointer; color: var(--accent-purple); }
 html {
   scroll-behavior: smooth;
 }
+
+#btn-back-to-top {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1001;
+  width: 50px;
+  height: 50px;
+  background: rgba(139, 92, 246, 0.2); /* Morado suave transparente */
+  color: var(--accent-purple);
+  border: 2px solid var(--accent-purple);
+  border-radius: 50%; /* Esto lo hace círculo */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  
+  /* Centrar la flecha dentro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-back-to-top:hover {
+  background: var(--accent-purple);
+  color: white;
+  transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+  box-shadow: 0 0 20px var(--accent-purple);
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
