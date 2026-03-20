@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suzu_VT | Wiki de Comandos</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Suzu_VT</h1>
+  <p style="letter-spacing: 5px; color: var(--text-muted);">DICCIONARIO DE HECHIZOS</p>
+</header>
+
+<nav>
+  <a href="../index.html">VOLVER AL INICIO</a>
+  <a href="#basicos">BÁSICOS</a>
+  <a href="#interaccion">INTERACCIÓN</a>
+</nav>
+
+<main class="section">
+  <div class="card card-lore">
+    <h3>📖 MANUAL DEL ESPECTADOR</h3>
+    <p>Usa estos comandos en el chat de Twitch para interactuar con la entidad Suzu.</p>
+  </div>
+
+  <section id="basicos">
+    <h3 class="section-title">✨ COMANDOS BÁSICOS</h3>
+    <div class="command-grid">
+      <div class="command-item">
+        <span class="command-name">!redes</span>
+        <p class="command-desc">Muestra los portales a las dimensiones de Suzu.</p>
+      </div>
+      <div class="command-item">
+        <span class="command-name">!discord</span>
+        <p class="command-desc">Únete al refugio de los murciélagos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="interaccion" style="margin-top: 50px;">
+    <h3 class="section-title">🦇 INTERACCIÓN</h3>
+    <div class="command-grid">
+      <div class="command-item highlight-purple">
+        <span class="command-name">!morder</span>
+        <p class="command-desc">Marca a alguien como parte de la prole.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Suzu_VT — Todos los pactos reservados</p>
+</footer>
+
+<button id="btn-back-to-top" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
+</button>
+
+<script>
+  // Lógica simple para el botón volver arriba
+  const btn = document.getElementById("btn-back-to-top");
+  window.onscroll = () => {
+    btn.style.display = (window.scrollY > 400) ? "flex" : "none";
+  };
+  btn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+</script>
+
+</body>
+</html>
