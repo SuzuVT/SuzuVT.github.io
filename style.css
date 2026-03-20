@@ -258,3 +258,83 @@ html {
   from { opacity: 0; transform: scale(0); }
   to { opacity: 1; transform: scale(1); }
 }
+
+/* --- FORMATO AVANZADO DE COMANDOS --- */
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.command-item {
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2); /* Borde morado sutil */
+  border-radius: 12px;
+  padding: 25px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+/* Efecto Glow al pasar el mouse */
+.command-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-purple);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(139, 92, 246, 0.2);
+  background: rgba(20, 10, 30, 0.8);
+}
+
+/* El nombre del comando (!comando) */
+.command-name {
+  display: inline-block;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 6px;
+  border: 1px solid var(--accent-purple);
+  text-shadow: 0 0 10px var(--accent-purple);
+}
+
+/* El prefijo "!" con un color diferente */
+.command-name::first-letter {
+  color: var(--accent-crimson);
+  font-weight: bold;
+}
+
+/* Descripción del comando */
+.command-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 10px;
+}
+
+/* Etiqueta de "Uso" o parámetros [usuario] */
+.command-usage {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--accent-purple);
+  opacity: 0.8;
+  margin-top: 8px;
+  display: block;
+}
+
+/* Decoración visual: El número de comando en el fondo */
+.command-item::after {
+  content: "CMD";
+  position: absolute;
+  bottom: -10px;
+  right: -5px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
