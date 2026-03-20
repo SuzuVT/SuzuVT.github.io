@@ -39,16 +39,18 @@
     </div>
   </section>
 
-  <section class="section" id="stream">
-    <div class="card card-stream">
-      <div class="live-indicator">
-        <span class="dot"></span> LIVE
-      </div>
-      <h3>🎥 STREAMS RECIENTES</h3>
-      <div class="video-placeholder">
-        <img src="https://via.placeholder.com/800x450/1a0b1a/8b5cf6?text=Cargando+Señal+de+Twitch..." alt="Twitch Stream">
-      </div>
-      <a href="#" class="btn-action">IR A TWITCH.TV</a>
+<section class="section" id="stream">
+  <div class="card card-stream">
+    <div id="live-status" class="live-indicator offline">
+      <span class="dot"></span> <span id="status-text">ESPERANDO SEÑAL...</span>
+    </div>
+
+    <h3>🎥 TRANSMISIÓN ACTUAL</h3>
+    
+    <div id="twitch-embed-container"></div>
+
+    <p>Interacción directa y caos controlado en el Suzu-verso.</p>
+    <a href="https://twitch.tv/TU_USUARIO" target="_blank" class="btn-action">IR AL CANAL</a>
     </div>
   </section>
 
@@ -93,3 +95,35 @@
 
 </body>
 </html>
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+<script type="text/javascript">
+  var options = {
+    width: "100%",
+    height: 480,
+    channel: "Suzu_VT", // <--- ¡CAMBIA ESTO POR TU NOMBRE DE TWITCH!
+    parent: ["https://suzuvt.github.io", "127.0.0.1"] // Añade tu dominio final aquí después (ej: "suzu.com")
+  };
+
+  var player = new Twitch.Player("twitch-embed-container", options);
+
+  // EVENTO: Cuando el directo empieza
+  player.addEventListener(Twitch.Player.ONLINE, () => {
+    const indicator = document.getElementById('live-status');
+    const statusText = document.getElementById('status-text');
+    
+    indicator.classList.remove('offline');
+    indicator.classList.add('online');
+    statusText.innerText = '¡EN VIVO AHORA!';
+    console.log("Suzu está en directo. El hechizo ha comenzado.");
+  });
+
+  // EVENTO: Cuando el directo termina
+  player.addEventListener(Twitch.Player.OFFLINE, () => {
+    const indicator = document.getElementById('live-status');
+    const statusText = document.getElementById('status-text');
+    
+    indicator.classList.remove('online');
+    indicator.classList.add('offline');
+    statusText.innerText = 'MODO CREPUSCULAR (OFFLINE)';
+  });
+</script>

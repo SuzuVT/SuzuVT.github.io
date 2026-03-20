@@ -196,3 +196,24 @@ summary { font-weight: bold; cursor: pointer; color: var(--accent-purple); }
 
 /* TITULO SECCIÓN */
 .section-title { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+
+/* Estado por defecto (Gris/Apagado) */
+.live-indicator.offline {
+    background: #333;
+    opacity: 0.6;
+}
+.live-indicator.offline .dot {
+    background: #666;
+    animation: none; /* Sin parpadeo si está apagado */
+}
+
+/* Estado Online (Morado/Rojo parpadeante) */
+.live-indicator.online {
+    background: #9146FF;
+    box-shadow: 0 0 15px #9146FF;
+    opacity: 1;
+}
+.live-indicator.online .dot {
+    background: #ff0000;
+    animation: blink 1s infinite;
+}
