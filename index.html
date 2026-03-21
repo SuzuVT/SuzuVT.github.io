@@ -226,4 +226,21 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+        // Reutilizamos tu función de partículas para el fondo
+        function createParticles() {
+            const container = document.getElementById('header-particles');
+            for (let i = 0; i < 40; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1 + 'px';
+                p.style.width = size; p.style.height = size;
+                p.style.animationDuration = Math.random() * 10 + 5 + 's';
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
 </script>
