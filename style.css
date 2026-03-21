@@ -661,9 +661,12 @@ html {
 }
 
 /* Colores temáticos opcionales para los bordes al hacer hover */
-.tw:hover { border-color: #ffffff; }
+.x:hover { border-color: #ffffff; }
 .tk:hover { border-color: #ff0050; }
 .dc:hover { border-color: #5865F2; }
+.tw:hover { border-color: #6441a5; }
+.yt:hover { border-color: #FF0000; }
+.kf:hover { border-color: #ff4141; }
 
 /* --- MODO LINKTREE / CARRD --- */
 .linktree-mode {
