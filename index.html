@@ -144,7 +144,7 @@ player.addEventListener(Twitch.Player.ONLINE, () => {
     
   indicator.classList.remove('offline');
   indicator.classList.add('online');
-  statusText.innerText = '¡EN VIVO AHORA!';
+  statusText.innerText = 'EN VIVO';
   console.log("Suzu está en directo. El hechizo ha comenzado.");
 });
 
@@ -155,7 +155,7 @@ player.addEventListener(Twitch.Player.OFFLINE, () => {
   
   indicator.classList.remove('online');
   indicator.classList.add('offline');
-  statusText.innerText = 'MODO CREPUSCULAR (OFFLINE)';
+  statusText.innerText = 'OFFLINE';
 });
 
 const backToTopBtn = document.getElementById("btn-back-to-top");
