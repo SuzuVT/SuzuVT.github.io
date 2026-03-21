@@ -49,7 +49,7 @@ header {
 
 /* ESTILO DEL LOGO */
 .header-logo {
-    max-width: 150px; /* Ajusta el tamaño según tu logo */
+    max-width: 400px; /* Ajusta el tamaño según tu logo */
     height: auto;
     margin-bottom: 15px;
     filter: drop-shadow(0 0 10px var(--accent-purple)); /* Brillo morado al logo */
