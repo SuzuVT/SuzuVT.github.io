@@ -6,6 +6,31 @@
     <title>Suzu Kurai | Reglas de la Noche</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="/rsc/favicon.png">
+    <style>
+        /* Estilos específicos para integrar el icono de Twitch en la cabecera */
+        .rules-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .twitch-rules-icon {
+            width: 80px; /* Tamaño del icono */
+            height: auto;
+            margin-bottom: 15px;
+            /* Brillo morado místico */
+            filter: drop-shadow(0 0 10px var(--accent-purple, #8b5cf6)); 
+            position: relative;
+            z-index: 2;
+        }
+
+        .rules-header h2 {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            margin: 10px 0;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,7 +39,8 @@
     <main class="section">
         <div class="card card-rules">
             <div class="rules-header">
-                <div class="lock-icon">📜</div>
+                <img src="../rsc/twitch-icon.png" alt="Twitch Rules" class="twitch-rules-icon">
+                
                 <h2>REGLAS DE TWITCH</h2>
                 <p class="glitch-text" data-text="Estas reglas se aplican a Twitch, los moderadores se reservan el derecho de admisión siempre que esté justificado.">
                     Estas reglas se aplican a Twitch, los moderadores se reservan el derecho de admisión siempre que esté justificado.
@@ -76,7 +102,8 @@
         function createParticles() {
             const container = document.getElementById('header-particles');
             if(!container) return;
-            for (let i = 0; i < 30; i++) {
+            // Aumentado un poco el número para esta página
+            for (let i = 0; i < 40; i++) {
                 const p = document.createElement('div');
                 p.classList.add('particle');
                 p.style.left = Math.random() * 100 + '%';
@@ -84,6 +111,7 @@
                 const size = Math.random() * 3 + 1 + 'px';
                 p.style.width = size; p.style.height = size;
                 p.style.animationDuration = Math.random() * 10 + 5 + 's';
+                p.style.animationDelay = Math.random() * 5 + 's';
                 container.appendChild(p);
             }
         }
