@@ -811,6 +811,10 @@ html {
     filter: drop-shadow(0 0 8px #EA4335);
 }
 
+.email:hover .link-icon {
+    filter: drop-shadow(0 0 8px #EA4335);
+}
+
 /* --- MODO LINKTREE / CARRD --- */
 .linktree-mode {
     min-height: 100vh;
@@ -898,6 +902,7 @@ html {
     width: 24px;
     position: absolute;
     left: 25px;
+    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.5));
 }
 
 .link-item:hover {
