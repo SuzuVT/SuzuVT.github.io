@@ -6,6 +6,7 @@
   <title>🦇 Suzu Kurai 🌙 | Wiki de comandos</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/png" href="/rsc/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,20 +17,28 @@
   </div>
 </header>
 
-<nav class="topnav">
-  <a href="/" class="topnav-link">Inicio</a>
-  <a href="/lore" class="topnav-link">Lore</a>
-  <a href="/comandos" class="topnav-link active">Comandos</a>
-  <a href="/redes" class="topnav-link">Redes</a>
-  <a href="/vip" class="topnav-link">VIP</a>
-</nav>
+    <nav class="topnav">
+        <a href="/" class="topnav-link">Inicio</a>
+        <a href="/lore" class="topnav-link">Lore</a>
+        <a href="/perfil" class="topnav-link">Perfil</a>
+        <a href="/comandos" class="topnav-link active">Comandos</a>
+        <a href="/redes" class="topnav-link">Redes</a>
+    </nav>
 
-<main class="section">
-  <div class="card card-lore">
-    <h3>📖 MANUAL PARA PRINCIPIANTES</h3>
-    <p>Usa estos comandos en el chat de Twitch para interactuar con Suzu, Chirix se encargará del resto.</p>
-    <p>Recuerda: &ltobligatorio&gt, [opcional]</p>
-  </div>
+    <main class="section">
+        <!-- Decorative Page Hero -->
+        <div class="page-hero">
+            <div class="page-ornament left">✦ ✦ ✦</div>
+            <h1 class="page-title">Comandos</h1>
+            <div class="page-subtitle">Wiki de comandos oficial</div>
+            <div class="page-ornament right">✦ ✦ ✦</div>
+        </div>
+
+        <div class="card card-lore general-card">
+            <h3>📖 MANUAL PARA PRINCIPIANTES</h3>
+            <p>Usa estos comandos en el chat de Twitch para interactuar con Suzu, Chirix se encargará del resto.</p>
+            <p>Recuerda: &ltobligatorio&gt, [opcional]</p>
+        </div>
 
   <section id="basicos">
     <h3 class="section-title">✨ COMANDOS TWITCH</h3>
@@ -246,7 +255,9 @@
       if (name) copyText(name.textContent.trim());
     });
   });
-</script>
+  </script>
+
+  <script src="/js/starfield.js"></script>
 
 </body>
 </html>

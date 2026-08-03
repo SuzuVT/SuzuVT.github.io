@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;700&family=Quicksand:wght@500;600&display=swap');
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -8,7 +8,7 @@ body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', 'Inter', sans-serif;
     background: transparent;
 }
 
@@ -37,7 +37,7 @@ body, html {
     align-items: flex-start;
     width: 100%;
     margin-bottom: 10px;
-    filter: drop-shadow(0 0 6px rgba(138, 43, 226, 0.25));
+    filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.2));
 }
 
 .message-item:first-child {
@@ -45,61 +45,20 @@ body, html {
     animation: messageAppear 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Avatar con anillo mágico giratorio */
-.avatar-wrapper {
-    position: relative;
-    width: 46px;
-    height: 46px;
-    margin-left: 0;
-    margin-right: 11px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.avatar-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 52px;
-    height: 52px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    border: 2px dashed rgba(188, 19, 254, 0.55);
-    box-shadow:
-        0 0 12px rgba(188, 19, 254, 0.6),
-        inset 0 0 8px rgba(138, 43, 226, 0.4);
-    animation: spin 9s linear infinite;
-    pointer-events: none;
-}
-
-.avatar-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid rgba(188, 19, 254, 0.7);
-    box-shadow:
-        0 0 14px rgba(138, 43, 226, 0.7),
-        inset 0 0 10px rgba(0, 0, 0, 0.4);
-    object-fit: cover;
-}
-
-/* Burbuja con gradiente de nebulosa y glow */
 .bubble {
     position: relative;
     background:
-        radial-gradient(ellipse at top right, rgba(188, 19, 254, 0.18) 0%, transparent 70%),
-        linear-gradient(160deg, rgba(34, 18, 60, 0.82) 0%, rgba(12, 6, 26, 0.92) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+        radial-gradient(ellipse at top right, rgba(255, 105, 180, 0.12) 0%, transparent 60%),
+        linear-gradient(170deg, rgba(45, 10, 30, 0.92) 0%, rgba(15, 5, 20, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 9px 15px;
     border-radius: 3px 16px 16px 16px;
-    border: 1.5px solid rgba(188, 19, 254, 0.35);
+    border: 1.5px solid rgba(255, 105, 180, 0.3);
+    border-top: 2px solid rgba(255, 182, 193, 0.5);
     box-shadow:
-        0 0 18px rgba(138, 43, 226, 0.28),
-        inset 0 0 22px rgba(138, 43, 226, 0.12);
+        0 0 18px rgba(255, 20, 147, 0.15),
+        inset 0 0 22px rgba(139, 0, 70, 0.15);
     flex: 1;
     min-width: 0;
     max-width: 100%;
@@ -107,17 +66,21 @@ body, html {
     overflow: hidden;
 }
 
-/* Destello mágico en la esquina de la burbuja */
 .bubble::before {
-    content: "";
+    content: "♥";
     position: absolute;
-    top: -30px;
-    right: -30px;
-    width: 70px;
-    height: 70px;
-    background: radial-gradient(circle, rgba(188, 19, 254, 0.45) 0%, transparent 70%);
-    filter: blur(6px);
+    top: -8px;
+    right: 12px;
+    font-size: 12px;
+    color: rgba(255, 105, 180, 0.7);
+    text-shadow: 0 0 8px rgba(255, 20, 147, 0.6);
     pointer-events: none;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
 }
 
 .header {
@@ -129,7 +92,7 @@ body, html {
 }
 
 .username {
-    --user-color: #9b84ff;
+    --user-color: #ff69b4;
     font-family: 'Cinzel', 'Inter', serif;
     font-weight: 700;
     font-size: 16px;
@@ -144,7 +107,6 @@ body, html {
         0 0 16px var(--user-color);
 }
 
-/* Halo mágico detrás del nombre usando el color del usuario */
 .username::before {
     content: attr(data-name);
     position: absolute;
@@ -158,7 +120,6 @@ body, html {
     opacity: 0.45;
 }
 
-/* Suscriptor / VIP: nombre rosa + puntitos dorados + destello */
 .username-special {
     color: #ff8fd6;
     text-shadow:
@@ -192,16 +153,15 @@ body, html {
 }
 
 .text-content {
-    color: #efe9ff;
+    color: #fce4ec;
     font-size: 17px;
     line-height: 1.45;
     word-wrap: break-word;
     white-space: pre-wrap;
     text-align: left;
-    text-shadow: 0 0 4px rgba(138, 43, 226, 0.25);
+    text-shadow: 0 0 4px rgba(255, 105, 180, 0.25);
 }
 
-/* Badges y Emotes escalados */
 .badges {
     display: flex;
     align-items: center;
@@ -211,7 +171,7 @@ body, html {
 .badge-icon {
     height: 19px;
     vertical-align: middle;
-    filter: drop-shadow(0 0 4px rgba(188, 19, 254, 0.5));
+    filter: drop-shadow(0 0 4px rgba(255, 105, 180, 0.5));
 }
 
 .emote-img {
@@ -219,23 +179,18 @@ body, html {
     vertical-align: middle;
     margin: 0 3px;
     display: inline-block;
-    filter: drop-shadow(0 0 6px rgba(138, 43, 226, 0.45));
-}
-
-@keyframes spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.45));
 }
 
 @keyframes messageAppear {
     0% {
         opacity: 0;
         transform: translateY(-37.5px) scale(0.96);
-        filter: blur(4px) drop-shadow(0 0 6px rgba(138, 43, 226, 0.25));
+        filter: blur(4px) drop-shadow(0 0 8px rgba(255, 105, 180, 0.25));
     }
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
-        filter: blur(0) drop-shadow(0 0 6px rgba(138, 43, 226, 0.25));
+        filter: blur(0) drop-shadow(0 0 8px rgba(255, 105, 180, 0.25));
     }
 }

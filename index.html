@@ -6,6 +6,7 @@
   <title>🦇 Suzu Kurai 🌙</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="/rsc/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,19 +17,21 @@
   </div>
 </header>
 
-<nav class="topnav">
-  <a href="/" class="topnav-link active">Inicio</a>
-  <a href="/lore" class="topnav-link">Lore</a>
-  <a href="/comandos" class="topnav-link">Comandos</a>
-  <a href="/redes" class="topnav-link">Redes</a>
-  <a href="/vip" class="topnav-link">VIP</a>
-</nav>
+  <nav class="topnav">
+    <a href="/" class="topnav-link active">Inicio</a>
+    <a href="/lore" class="topnav-link">Lore</a>
+    <a href="/perfil" class="topnav-link">Perfil</a>
+    <a href="/comandos" class="topnav-link">Comandos</a>
+    <a href="/redes" class="topnav-link">Redes</a>
+  </nav>
 
-<main>
+    <main>
   <section class="hero" id="inicio">
-    <div class="hero-content">
-      <h2>AHORA ESTÁS BAJO EL HECHIZO...</h2>
-      <p>Ponte cómodo, la eternidad absoluta no ha hecho más que comenzar.</p>
+    <div class="hero-content page-hero">
+      <div class="page-ornament left">✦ ✦ ✦</div>
+      <h2 class="page-title">🦇 AHORA ESTÁS BAJO EL HECHIZO...</h2>
+      <div class="page-subtitle">Ponte cómodo, la eternidad absoluta no ha hecho más que comenzar.</div>
+      <div class="page-ornament right">✦ ✦ ✦</div>
     </div>
   </section>
 
@@ -36,7 +39,7 @@
     <div class="content">
 
 <section class="section" id="lore">
-  <div class="card card-lore magic-reveal">
+  <div class="card card-lore magic-reveal general-card">
     <div class="lore-header">
       <div class="magic-circle">🔮</div>
       <h3>LORE</h3>
@@ -59,43 +62,25 @@
 </section>
 
 <section class="section" id="stream">
-  <div class="card card-stream">
+  <div class="card card-stream general-card">
+    <div class="lore-header">
+      <div class="magic-circle">🎮</div>
+      <h3>STREAMS</h3>
+    </div>
+
     <div id="live-status" class="live-indicator offline">
       <span class="dot"></span> <span id="status-text">ESPERANDO SEÑAL...</span>
     </div>
-
-    <h3>🎥 STREAMS</h3>
     
     <div id="twitch-embed-container"></div>
 
-    <p>No te pierdas los directos de Suzu, .</p>
-<a href="/redes/twitch" target="_blank" class="btn-action">IR AL CANAL</a>
-    </div>
-  </section>
-
-<section class="section" id="galeria">
-  <div class="card card-gallery">
-    <h3>🖼️ FANARTS</h3>
-    <p style="margin-bottom: 20px; color: var(--text-muted);"><p>¡No olvides mandar tus dibujos por nuestro discord!</p>
-    
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="rsc/fanart2.jpeg" alt="Dibujito BLEH! | @yuu_uvt" class="clickable-img">
-      </div>
-      <div class="gallery-item">
-        <img src="rsc/fanart1.jpg" alt="Arte conceptual | @yuu_uvt" class="clickable-img">
-      </div>
+    <p>No te pierdas los directos de Suzu.</p>
+    <a href="/redes/twitch" target="_blank" class="btn-action">IR AL CANAL</a>
   </div>
 </section>
 
-<div id="image-modal" class="modal">
-  <span class="close-modal">&times;</span>
-  <img class="modal-content" id="img-full">
-  <div id="modal-caption"></div>
-</div>
-
 <section class="section" id="contacto">
-  <div class="card card-contact magic-reveal">
+  <div class="card card-contact magic-reveal general-card">
     <div class="lore-header">
       <div class="magic-circle">📡</div>
       <h3>REDES</h3>
@@ -104,7 +89,7 @@
       Conéctate con el murciélago que vigila entre sombras.
     </p>
     <div class="social-grid">
-            
+      
       <a href="/redes/twitch" target="_blank" class="social-card tw">
         <img src="rsc/twitch-icon.png" alt="Twitch" class="social-icon">
         <div class="social-info">
@@ -166,7 +151,7 @@
           <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"/>
           <path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"/>
           <path fill="#e53935" d="M35,11.2L24,19.45L13,11.2l-1,5.7l5,4.5l7,5.7l7-5.7l5-4.5L35,11.2z"/>
-          <path fill="#c62828" d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C9.132,8.301,8.228,8,7.298,8h-1.92C3.421,8,3,8.421,3,12.298z"/>
+          <path fill="#c62828" d="M3,12.298V16.2l10,7.5V11.2l3.124-2.341C9.132,8.301,8.228,8,7.298,8h-1.92C3.421,8,3,8.421,3,12.298z"/>
           <path fill="#fbc02d" d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341C38.868,8.301,39.772,8,40.702,8h1.92C44.579,8,45,8.421,45,12.298z"/>
         </svg>
         <div class="social-info">
@@ -179,9 +164,31 @@
   </div>
 </section>
 
+<section class="section" id="galeria">
+  <div class="card card-gallery general-card">
+    <div class="lore-header">
+      <div class="magic-circle">🖼️</div>
+      <h3>FANARTS</h3>
+    </div>
+    <p style="margin-bottom: 20px; color: var(--text-muted);">¡No olvides mandar tus dibujos por nuestro discord!</p>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="rsc/fanart2.jpeg" alt="Dibujito BLEH! | @yuu_uvt" class="clickable-img">
+      </div>
+      <div class="gallery-item">
+        <img src="rsc/fanart1.jpg" alt="Arte conceptual | @yuu_uvt" class="clickable-img">
+      </div>
+    </div>
+  </div>
+</section>
+
   <section class="section" id="faq">
-    <div class="card card-faq">
-      <h3>❓ DATOS</h3>
+    <div class="card card-faq general-card">
+      <div class="lore-header">
+        <div class="magic-circle">❓</div>
+        <h3>DATOS</h3>
+      </div>
       <details>
         <summary>¿Eres chico o chica?</summary>
         <p>El personaje "Suzu Kurai" no tiene género, pero lo interpreta un hombre muy sensualón.</p>
@@ -210,6 +217,12 @@
   </section>
     </div>
   </div>
+
+  <div id="image-modal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="img-full">
+    <div id="modal-caption"></div>
+  </div>
 </main>
 
 <footer>
@@ -220,6 +233,7 @@
     <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
   </svg>
 </button>
+<script src="/js/starfield.js"></script>
 </body>
 </html>
 <script src="https://player.twitch.tv/js/embed/v1.js"></script>
@@ -236,7 +250,7 @@ var player = new Twitch.Player("twitch-embed-container", options);
 player.addEventListener(Twitch.Player.ONLINE, () => {
   const indicator = document.getElementById('live-status');
   const statusText = document.getElementById('status-text');
-    
+  
   indicator.classList.remove('offline');
   indicator.classList.add('online');
   statusText.innerText = 'EN VIVO';
@@ -318,7 +332,7 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 
 function createParticles() {
   const container = document.getElementById('header-particles');

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzu Kurai | 404</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/rsc/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        .error-wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .error-code {
+            font-size: clamp(6rem, 18vw, 12rem);
+            line-height: 1;
+            margin: 0;
+            color: var(--accent-purple);
+            text-shadow: 0 0 30px var(--accent-purple), 0 0 60px var(--accent-purple);
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        .error-description {
+            max-width: 600px;
+            margin: 20px auto;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .btn-lore {
+            display: inline-block;
+            padding: 14px 32px;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--accent-purple);
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+            margin-top: 20px;
+        }
+        .btn-lore:hover {
+            background: var(--accent-purple);
+            color: white;
+            box-shadow: 0 0 25px var(--accent-purple);
+            transform: translateY(-3px);
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-particles"></div>
+        <div class="header-content">
+            <img src="rsc/Suzu Kurai Logo.png" alt="Suzu Kurai" class="header-logo">
+        </div>
+    </header>
+
+    <nav class="topnav">
+        <a href="/" class="topnav-link">Inicio</a>
+        <a href="/lore" class="topnav-link">Lore</a>
+        <a href="/perfil" class="topnav-link">Perfil</a>
+        <a href="/comandos" class="topnav-link">Comandos</a>
+        <a href="/redes" class="topnav-link">Redes</a>
+    </nav>
+
+    <main>
+        <div class="error-wrapper">
+            <div class="error-code">404</div>
+            <p class="error-description">
+                Esta página se ha desvanecido en las sombras del Suzu-verso.<br>
+                Incluso el multiverso tiene sus límites.
+            </p>
+            <a href="/" class="btn-lore">Volver al inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Suzu Kurai — Dossier de Lore Autorizado</p>
+    </footer>
+
+    <script src="/js/starfield.js"></script>
+    <script>
+        function createParticles() {
+            const header = document.getElementById('header-particles');
+            if(!header) return;
+            const count = 35;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const size = Math.random() * 5 + 2 + 'px';
+                p.style.width = size;
+                p.style.height = size;
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                const duration = Math.random() * 3 + 2 + 's';
+                p.style.animationDuration = duration;
+                p.style.animationDelay = Math.random() * 5 + 's';
+                header.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
+</body>
+</html>

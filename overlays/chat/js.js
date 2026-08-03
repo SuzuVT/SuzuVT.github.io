@@ -38,9 +38,6 @@ load7TVEmotes();
 function add(data) {
     let clone = msgTemplate.content.cloneNode(true);
 
-    // Configurar Avatar
-    clone.querySelector(".avatar-img").src = data.User.AvatarLink;
-
     // Configurar Usuario
     const userSpan = clone.querySelector(".username");
     userSpan.textContent = data.User.DisplayName;
